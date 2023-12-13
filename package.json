@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Tugas Project Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alim300301/project.git"
+  },
+  "keywords": [
+    "project",
+    "backend"
+  ],
+  "author": "Alim Sujito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alim300301/project/issues"
+  },
+  "homepage": "https://github.com/alim300301/project#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
