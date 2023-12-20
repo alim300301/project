@@ -1,11 +1,23 @@
-const express = require ('express') 
+const express = require('express') 
 const app = express()
 
-app.get('/', function (req, res) {
-res.send('Hello Saya Alim Sujito Mahasiswa SM 3.1 Siap Belajar Express Js!!')
-})
+const bukuRouter = require('./routers/bukuRouter') 
+const usersRouter = require('./routers/usersRouter') 
+app.use(express.json())
+app.use(
+    express.urlencoded ({extended:true})
+);
 
-app.listen(5000, function(){
+app.use('/', bukuRouter);
+app.use('/', usersRouter);
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    console.error(err.message, err.stack);
+    res.status(statusCode).json({message: err.message})
 })
-
-console.log('server berjalan lancar')
+app.get('/', function (req,res){
+    res.send ('Hello Mahasiswa SM3.1 Selamat Belajar Express js')
+})
+app.listen (5000,function(){
+    console.log('Server Berjalan Dengan Lancar')
+})

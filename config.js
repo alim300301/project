@@ -3,7 +3,7 @@ const config = {
         host: "localhost",
         user: "root",
         password:"",
-        database: "db_bukuonline"
+        database: "bukuonline"
     }
 }
 module.exports = config
